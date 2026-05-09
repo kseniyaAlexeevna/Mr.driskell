@@ -14,7 +14,7 @@
       <div class="header__top">
         <div class="header__catalog mobile">
           <p class="header__catalog-text">Меню</p>
-          <div class="header__catalog-menu">
+          <div class="header__catalog-menu mobile">
             <div class="header__catalog-menu-line"></div>
             <div class="header__catalog-menu-line"></div>
             <div class="header__catalog-menu-line"></div>
@@ -1579,11 +1579,9 @@
           <p class="form__text">Подпишитесь на новостную рассылку с самыми интересными новостями и акциями</p>
           <form action="#">
             <label class="form__label" for="mail">Эл. почта</label>
-            <input class="form__input" type="text" placeholder="Figur@mail.ru" id="mail"
-              required>
+            <input class="form__input" type="text" placeholder="Figur@mail.ru" id="mail" required>
             <label class="form__label" for="name">Имя</label>
-            <input class="form__input" type="text" placeholder="Введите имя" id="name"
-              required>
+            <input class="form__input" type="text" placeholder="Введите имя" id="name" required>
             <div class="form__check">
               <input class="form__check-input" type="checkbox" id="check" required>
               <label class="form__check-label" for="check">Вы соглашаетесь на обработку ваших персональных
@@ -1596,7 +1594,7 @@
       </div>
     </section>
   </main>
-  <!-- <footer class="footer">
+  <footer class="footer">
     <div class="footer__container container">
       <div class="footer__links">
         <div class="footer__links-logo">
@@ -1627,7 +1625,7 @@
       </div>
       <div class="footer__contact">
         <div class="footer__contact-contact">
-          <a class="footer__contact-contact-link" href="tel:+79525525252">+7 952 552-52-52</a>
+          <a class="footer__contact-contact-link" href="tel:88006006191">8 800 600-61-91</a>
           <ul class="footer__contact-contact-list">
             <li class="footer__contact-contact-item">
               <a class="footer__contact-contact-item-link" href="#">
@@ -1685,13 +1683,144 @@
         <a class="footer__contact-mail" href="mailto:Mr.Driskell@mail.ru">Mr.Driskell@mail.ru</a>
       </div>
     </div>
-  </footer> -->
-  <!-- <div class="upArrow container">
+  </footer>
+  <div class="overlay"></div>
+  <div class="header__menu">
+    <ul class="header__menu-list">
+      <li class="header__menu-item ctg">
+        <a class="header__menu-link" href="#">Каталог</a>
+        <ul class="header__menu-catalog-list">
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Новинки</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Наборы для татуировок</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Тату машинки</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Тату краски</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Тату иглы</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Тату держатели</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Тату наконечники</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Блоки питания</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Педали и провода</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Аксессуары</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Принтеры и планшеты</a>
+          </li>
+          <li class="header__menu-catalog-item">
+            <a class="header__menu-catalog-link" href="#">Защита, ёмкости, расходн…</a>
+          </li>
+        </ul>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">Контакты</a>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">Промокоды</a>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">Скидки</a>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">Помощь</a>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">О нас</a>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">Избранное</a>
+      </li>
+      <li class="header__menu-item">
+        <a class="header__menu-link" href="#">Личный кабинет</a>
+      </li>
+    </ul>
+    <div class="header__menu-search">
+      <input type="text" placeholder="Поиск" id="search">
+      <img class="header__menu-search-img" src="./src/assets/images/icons/search.svg" alt="">
+    </div>
+    <div class="header__contact">
+      <div class="header__contact-line"></div>
+      <div class="header__contact-contact">
+        <a class="header__contact-contact-link" href="tel:88006006191">8 800 600-61-91</a>
+        <ul class="header__contact-contact-list">
+          <li class="header__contact-contact-item">
+            <a class="header__contact-contact-item-link" href="#">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.714286" y="0.714286" width="38.5714" height="38.5714" fill="#050402" />
+                <rect x="0.714286" y="0.714286" width="38.5714" height="38.5714" stroke="#BB8C5F"
+                  stroke-width="1.42857" />
+                <path
+                  d="M16.6736 24.0688L16.3333 29.1669C16.8333 29.1669 17.0542 28.9382 17.3333 28.6669L19.7355 26.331L24.7333 30.0234C25.653 30.5309 26.3168 30.2681 26.5459 29.1695L29.8268 13.709C30.1627 12.3623 29.3134 11.7515 28.4335 12.1509L9.16855 19.5794C7.85353 20.1069 7.8612 20.8405 8.92885 21.1674L13.8727 22.7105L25.3182 15.4897C25.8585 15.162 26.3544 15.3382 25.9474 15.6994L16.6733 24.0686L16.6736 24.0688Z"
+                  fill="#BB8C5F" />
+              </svg>
+            </a>
+          </li>
+          <li class="header__contact-contact-item">
+            <a class="header__contact-contact-item-link" href="#">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.714286" y="0.714286" width="38.5714" height="38.5714" fill="#050402" />
+                <rect x="0.714286" y="0.714286" width="38.5714" height="38.5714" stroke="#BB8C5F"
+                  stroke-width="1.42857" />
+                <path
+                  d="M25.3196 16.9108C25.2294 16.1761 25.0041 15.5993 24.6041 15.0883C24.0847 14.4304 23.421 14.0364 22.4383 13.8027C21.7979 13.647 21.5391 13.6648 21.3075 13.8769C21.0917 14.0757 21.0496 14.474 21.2145 14.732C21.3304 14.9192 21.4642 14.9863 21.8362 15.0595C22.3317 15.1509 22.674 15.2695 22.9855 15.448C23.6465 15.8307 23.9543 16.4295 23.9873 17.3989C24.0027 17.854 24.0419 17.994 24.2005 18.1554C24.4944 18.4505 25.0175 18.3931 25.2394 18.04C25.3208 17.9069 25.3332 17.8489 25.3418 17.5399C25.3475 17.3485 25.3393 17.0637 25.3196 16.9108Z"
+                  fill="#BB8C5F" />
+                <path
+                  d="M27.9087 17.7393C27.7781 15.4886 26.9 13.6777 25.3283 12.4037C24.4429 11.6878 23.3725 11.1955 22.1993 10.9561C21.7695 10.8705 20.9782 10.8011 20.8425 10.8408C20.7144 10.8775 20.5332 11.0166 20.4525 11.1423C20.3671 11.2787 20.3478 11.5832 20.4206 11.7593C20.5382 12.0537 20.757 12.1577 21.3696 12.2114C22.314 12.2942 23.288 12.6269 24.024 13.1193C24.8642 13.6799 25.5322 14.4468 25.9643 15.3479C26.3376 16.1222 26.5672 17.238 26.5608 18.2371C26.5587 18.5985 26.6144 18.8026 26.7594 18.9518C26.9782 19.1812 27.2971 19.2314 27.5786 19.079C27.8906 18.9145 27.9636 18.6258 27.9087 17.7393Z"
+                  fill="#BB8C5F" />
+                <path
+                  d="M30.7737 26.4066C30.7298 26.278 30.6273 26.0795 30.5541 25.9656C30.0929 25.2674 27.6149 23.3233 26.3777 22.6875C25.6713 22.3237 25.1479 22.2025 24.7599 22.3163C24.3426 22.434 24.123 22.6287 23.4239 23.4997C23.142 23.8488 22.8529 24.1759 22.776 24.2273C22.5857 24.3596 22.2123 24.4663 21.9488 24.4663C21.3375 24.4625 20.2284 24.0656 19.3756 23.5438C18.7131 23.1396 17.8639 22.4156 17.2124 21.699C16.4437 20.8574 15.9203 20.115 15.5066 19.2771C14.9723 18.2004 14.8368 17.5425 15.0601 17.0611C15.115 16.9398 15.1882 16.8112 15.2211 16.7707C15.2541 16.7341 15.5982 16.451 15.9788 16.1423C16.7255 15.547 16.8463 15.411 16.9854 15.0031C17.1611 14.4849 17.1135 13.9557 16.8427 13.4229C16.634 13.0186 16.0886 12.1366 15.6933 11.567C15.1699 10.8173 13.8668 9.21502 13.6069 8.99813C13.1384 8.61597 12.5382 8.54978 11.8756 8.80708C11.1766 9.07903 9.86613 10.1374 9.30609 10.8761C8.80097 11.5449 8.60703 12.019 8.57772 12.6438C8.55212 13.1582 8.59602 13.3714 8.86689 14.0292C10.9862 19.1889 14.1487 23.3086 18.4935 26.5794C20.7628 28.2882 23.1164 29.5892 25.5578 30.4786C26.9816 30.9967 27.6003 31.0224 28.3286 30.5962C28.6361 30.4124 29.3975 29.6296 29.822 29.06C30.5248 28.1118 30.7847 27.6745 30.8579 27.3254C30.9092 27.0865 30.8689 26.6713 30.7737 26.4066Z"
+                  fill="#BB8C5F" />
+                <path
+                  d="M30.5445 18.2559C30.4977 16.9828 30.2838 15.9385 29.838 14.7742C29.3978 13.6289 28.9523 12.8815 28.1109 11.8707C27.3155 10.9229 26.6977 10.3818 25.7178 9.77941C24.3507 8.94012 22.687 8.38471 20.8225 8.15113C20.1866 8.06949 20.0428 8.07533 19.8477 8.20581C19.4697 8.453 19.4747 9.06955 19.8539 9.31304C19.9794 9.3905 20.0908 9.41871 20.5994 9.48545C21.3802 9.59083 21.8823 9.69014 22.478 9.85309C24.814 10.4933 26.6105 11.8018 27.8115 13.7443C28.8165 15.3634 29.2337 16.9826 29.1745 19.0506C29.1539 19.7497 29.1689 19.8728 29.2755 20.0407C29.4796 20.3538 30.018 20.4158 30.2942 20.156C30.466 19.9976 30.4984 19.8788 30.5323 19.2804C30.5485 18.9682 30.552 18.5074 30.5445 18.2559Z"
+                  fill="#BB8C5F" />
+              </svg>
+            </a>
+          </li>
+          <li class="header__contact-contact-item">
+            <a class="header__contact-contact-item-link" href="#">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="0.5" y="0.5" width="39" height="39" fill="#050402" />
+                <rect x="0.5" y="0.5" width="39" height="39" stroke="#BB8C5F" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M32.4565 19.0443C32.4539 25.6 27.121 30.9342 20.564 30.9368H20.5591C18.5687 30.9361 16.6129 30.4368 14.8759 29.4893L8.57141 31.1431L10.2586 24.9804C9.21786 23.1768 8.67023 21.131 8.67112 19.0349C8.67373 12.4778 14.0088 7.14307 20.5639 7.14307C23.7453 7.14444 26.7313 8.38295 28.9766 10.6309C31.2219 12.8787 32.4578 15.8667 32.4565 19.0443ZM11.4268 28.3177L15.168 27.3363L15.5289 27.5505C17.0465 28.4511 18.7862 28.9277 20.56 28.9284H20.564C26.0121 28.9284 30.4463 24.494 30.4485 19.0436C30.4495 16.4024 29.4224 13.919 27.5561 12.0506C25.6899 10.1822 23.208 9.15269 20.5678 9.15178C15.1155 9.15178 10.6812 13.5857 10.679 19.0356C10.6783 20.9034 11.2009 22.7223 12.1903 24.2961L12.4254 24.6701L11.4268 28.3177Z"
+                  fill="#BB8C5F" />
+                <path
+                  d="M26.32 22.6156C26.2458 22.4917 26.0477 22.4173 25.7505 22.2685C25.4534 22.1198 23.9924 21.401 23.72 21.3017C23.4477 21.2026 23.2495 21.1531 23.0514 21.4504C22.8534 21.7479 22.2839 22.4173 22.1105 22.6156C21.9372 22.8139 21.7638 22.8388 21.4668 22.69C21.1696 22.5413 20.2121 22.2275 19.0771 21.2151C18.1937 20.4271 17.5973 19.454 17.424 19.1565C17.2506 18.859 17.4055 18.6983 17.5543 18.5501C17.688 18.4169 17.8514 18.2029 18 18.0295C18.1486 17.856 18.1981 17.732 18.2972 17.5338C18.3962 17.3354 18.3467 17.1619 18.2724 17.0132C18.1981 16.8644 17.6038 15.4018 17.3562 14.8068C17.115 14.2273 16.87 14.3058 16.6876 14.2967C16.5145 14.288 16.3162 14.2861 16.1181 14.2861C15.92 14.2861 15.598 14.3605 15.3257 14.658C15.0533 14.9555 14.2856 15.6744 14.2856 17.137C14.2856 18.5997 15.3504 20.0127 15.499 20.211C15.6476 20.4094 17.5944 23.4108 20.5753 24.6979C21.2843 25.0041 21.8377 25.1869 22.2693 25.3239C22.9812 25.5501 23.629 25.5182 24.141 25.4416C24.7119 25.3563 25.8991 24.7228 26.1468 24.0287C26.3943 23.3345 26.3943 22.7395 26.32 22.6156Z"
+                  fill="#BB8C5F" />
+              </svg>
+
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="header__contact-time">
+        <p>Время работы: с <time datetime="T9:00">9:00</time> до <time datetime="T20:00">20:00</time> по мск</p>
+      </div>
+      <a class="header__contact-mail" href="mailto:Mr.Driskell@mail.ru">Mr.Driskell@mail.ru</a>
+    </div>
+  </div>
+  <div class="upArrow container">
     <div class="upArrow__info">
       <p class="upArrow__text">Вернуться вверх</p>
       <a class="upArrow__button button" href="#"></a>
     </div>
-  </div> -->
+  </div>
   <script type="module" src="/src/main.js"></script>
 </body>
 

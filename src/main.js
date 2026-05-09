@@ -2,6 +2,11 @@ import './style.scss';
 
 const windowW = document.documentElement.clientWidth;
 const catalogMenu = document.querySelector('.header__catalog-menu.bottom')
+const catalogMenuMobile = document.querySelector('.header__catalog-menu.mobile')
+const headerMenu = document.querySelector('.header__menu')
+const headerMenuCatalog = document.querySelector('.header__menu-item.ctg')
+const headerMenuCatalogList = document.querySelector('.header__menu-catalog-list')
+const overlay = document.querySelector('.overlay')
 const catalogFilter = document.querySelector('.header__catalog-filter')
 const catalogFilterCategory = document.querySelector('.header__catalog-filter-top-category')
 const catalogFilterBrand = document.querySelector('.header__catalog-filter-top-brand')
@@ -33,6 +38,38 @@ catalogFilterBrand.addEventListener('click', () => {
   if (!catalogListBrand.classList.contains('active') && catalogListCategory.classList.contains('active')) {
     catalogListBrand.classList.add('active')
     catalogListCategory.classList.remove('active')
+  }
+})
+
+catalogMenuMobile.addEventListener('click', () => {
+  if (headerMenu.classList.contains('active')) {
+    headerMenu.classList.remove('active')
+    catalogMenuMobile.classList.remove('active')
+    overlay.classList.remove('active')
+  } else {
+    headerMenu.classList.add('active')
+    catalogMenuMobile.classList.add('active')
+    overlay.classList.add('active')
+  }
+})
+
+overlay.addEventListener('click', () => {
+  if (headerMenu.classList.contains('active')) {
+    headerMenu.classList.remove('active')
+    catalogMenuMobile.classList.remove('active')
+    overlay.classList.remove('active')
+  } else {
+    headerMenu.classList.add('active')
+    catalogMenuMobile.classList.add('active')
+    overlay.classList.add('active')
+  }
+})
+
+headerMenuCatalog.addEventListener('click', () => {
+  if (headerMenuCatalogList.classList.contains('active')) {
+    headerMenuCatalogList.classList.remove('active')
+  } else {
+    headerMenuCatalogList.classList.add('active')
   }
 })
 
@@ -334,15 +371,14 @@ updateSlider()
 const upButton = document.querySelector(".upArrow.container")
 let windowHeight = window.document.body.scrollHeight
 
-// window.addEventListener("scroll", () => {
-//   let windowlocate = window.scrollY
-//   if (windowlocate >= (windowHeight - 1500)) {
-//     upButton.style.opacity = 1
-//   } else {
-//     upButton.style.opacity = 0
-//   }
-// })
-// !!!Не забыть вернуть!!!
+window.addEventListener("scroll", () => {
+  let windowlocate = window.scrollY
+  if (windowlocate >= (windowHeight - 2000)) {
+    upButton.style.opacity = 1
+  } else {
+    upButton.style.opacity = 0
+  }
+})
 
 
 const brandsButtonLeft = document.querySelector(".brands__button.left")
@@ -353,14 +389,14 @@ let currentBrands = 0;
 const brands = Math.ceil(brandsItem.length / 2);
 
 if (windowW <= 1280) {
-    brandsList.style.transform = `translateX(${(-currentBrands * 768) + (windowW - (768)) / 2}px)`
+  brandsList.style.transform = `translateX(${(-currentBrands * 768) + (windowW - (768)) / 2}px)`
 }
 
 if (windowW <= 700) {
-    brandsList.style.transform = `translateX(${(-currentBrands * 440) + (windowW - (440)) / 2}px)`
+  brandsList.style.transform = `translateX(${(-currentBrands * 440) + (windowW - (440)) / 2}px)`
 }
 if (windowW <= 400) {
-    brandsList.style.transform = `translateX(${(-currentBrands * 320) + (windowW - (320)) / 2}px)`
+  brandsList.style.transform = `translateX(${(-currentBrands * 320) + (windowW - (320)) / 2}px)`
 }
 
 brandsButtonLeft.addEventListener("click", () => {
