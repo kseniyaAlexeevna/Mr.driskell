@@ -270,6 +270,16 @@ if (windowW <= 1000) {
   })
 }
 
+if (windowW <= 760) {
+  filterCatalog.forEach((el) => {
+    Array.from(el.children).forEach((card, ind) => {
+      if (ind > 0) {
+        el.children[ind].style.display = "none"
+      }
+    })
+  })
+}
+
 const feedbackArrowLeft = document.querySelector(".feedback__button.left")
 const feedbackArrowRight = document.querySelector(".feedback__button.right")
 const feedbackList = document.querySelector(".feedback__list")

@@ -228,6 +228,7 @@ button,
 
       &.ctg {
         position: relative;
+
         &::after {
           content: "";
           position: absolute;
@@ -2358,6 +2359,7 @@ button,
         margin-bottom: 8px;
       }
     }
+
     &__pag {
       &-list {
         margin-block: 0;
@@ -2554,19 +2556,27 @@ button,
     &__item {
       white-space: nowrap;
     }
+
     &__list {
       width: 320px;
       justify-content: start;
       column-gap: 24px;
       overflow-x: auto;
       overflow-y: hidden;
+      padding-inline: 20px;
     }
+
     &__catalog {
       grid-template-columns: auto;
     }
+
     &__card {
       width: 280px;
       justify-self: center;
+
+      &-button {
+        text-align: center;
+      }
     }
   }
 }
@@ -2849,6 +2859,7 @@ button,
         display: none;
       }
     }
+
     &__menu {
       width: 100%;
     }
