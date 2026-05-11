@@ -1156,7 +1156,7 @@ button,
       color: var(--color-orange);
       white-space: nowrap;
       line-height: 150%;
-      background: url("./assets/images/button-card.png") 0 0 / 100% no-repeat;
+      background: url("./assets/images/button-card.png") 0 0 / 100% 100% no-repeat;
       margin-top: 20px;
       margin-inline: -15px;
       transition-duration: 0.3s;
@@ -2318,6 +2318,10 @@ button,
   .filter {
     margin-bottom: 80px;
 
+    &__list {
+      padding-inline: 0;
+    }
+
     &__item {
       font-size: 20px;
     }
@@ -2325,6 +2329,7 @@ button,
     &__catalog {
       grid-template-columns: repeat(3, auto);
       grid-template-rows: auto;
+      margin-bottom: 48px;
     }
 
     &__card {
@@ -2343,13 +2348,29 @@ button,
       &-button {
         display: block;
         margin-top: 16px;
-        margin-inline: 0;
+        margin-inline: -20px;
+        padding: 8px 60px 12px;
+      }
+
+      &-img {
+        width: 229px;
+        height: 228px;
+        margin-bottom: 8px;
+      }
+    }
+    &__pag {
+      &-list {
+        margin-block: 0;
       }
     }
   }
 
   .catalog {
     margin-bottom: 80px;
+
+    &__title {
+      text-align: left;
+    }
 
     &__item {
       &-title {
@@ -2524,6 +2545,28 @@ button,
       grid-area: 3 / 1 / span 1 / span 1;
       max-width: 275px;
       margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 760px) {
+  .filter {
+    &__item {
+      white-space: nowrap;
+    }
+    &__list {
+      width: 320px;
+      justify-content: start;
+      column-gap: 24px;
+      overflow-x: auto;
+      overflow-y: hidden;
+    }
+    &__catalog {
+      grid-template-columns: auto;
+    }
+    &__card {
+      width: 280px;
+      justify-self: center;
     }
   }
 }

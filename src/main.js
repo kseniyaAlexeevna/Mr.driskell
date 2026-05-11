@@ -82,6 +82,7 @@ const filterItem = document.querySelectorAll(".filter__item")
 const filterCatalog = document.querySelectorAll(".filter__catalog")
 const filterCardTabs = document.querySelectorAll(".filter__card-tabs")
 const filterCardImgs = document.querySelectorAll(".filter__card-images")
+const filterCardBtn = document.querySelectorAll(".filter__card-button")
 let currentPag = 0
 let currentTab = 0
 let filterCurrentItem = 2
@@ -263,6 +264,9 @@ if (windowW <= 1000) {
         el.children[ind].style.display = "none"
       }
     })
+  })
+  filterCardBtn.forEach((el) => {
+    el.textContent = "В корзину"
   })
 }
 
