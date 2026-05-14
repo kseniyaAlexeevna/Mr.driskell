@@ -2101,6 +2101,12 @@ button,
   }
 
   .brands {
+    &__place {
+      &-list {
+        overflow-x: auto;
+        overflow-y: hidden;
+      }
+    }
     &__title {
       margin-bottom: 0;
     }
@@ -2491,6 +2497,7 @@ button,
     }
 
     &__item {
+      
       &-img {
         width: 80px;
       }
@@ -2660,6 +2667,10 @@ button,
   }
 
   .catalog {
+    &__title {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
     &__list {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(5, auto);

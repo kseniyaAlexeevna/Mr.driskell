@@ -85,7 +85,7 @@ const filterCardImgs = document.querySelectorAll(".filter__card-images")
 const filterCardBtn = document.querySelectorAll(".filter__card-button")
 let currentPag = 0
 let currentTab = 0
-let filterCurrentItem = 2
+let filterCurrentItem = 0
 
 if (windowW <= 1280) {
   heroPagItemMobile.forEach((el, index) => {
@@ -256,7 +256,15 @@ filterCardTabs.forEach((el, index) => {
     })
   })
 })
-
+if (windowW <= 1920) {
+  filterCatalog.forEach((el) => {
+    Array.from(el.children).forEach((card, ind) => {
+      if (ind > 7) {
+        el.children[ind].style.display = "none"
+      }
+    })
+  })
+}
 if (windowW <= 1000) {
   filterCatalog.forEach((el) => {
     Array.from(el.children).forEach((card, ind) => {
