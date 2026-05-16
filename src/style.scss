@@ -1161,6 +1161,7 @@ button,
       margin-top: 20px;
       margin-inline: -15px;
       transition-duration: 0.3s;
+      text-align: center;
 
       &:hover {
         scale: 1.08;
@@ -2107,6 +2108,7 @@ button,
         overflow-y: hidden;
       }
     }
+
     &__title {
       margin-bottom: 0;
     }
@@ -2180,7 +2182,9 @@ button,
     }
 
     &__catalog {
-      grid-template-columns: repeat(3, auto);
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      margin-bottom: 48px;
     }
 
     &__button {
@@ -2331,12 +2335,6 @@ button,
 
     &__item {
       font-size: 20px;
-    }
-
-    &__catalog {
-      grid-template-columns: repeat(3, auto);
-      grid-template-rows: auto;
-      margin-bottom: 48px;
     }
 
     &__card {
@@ -2497,7 +2495,7 @@ button,
     }
 
     &__item {
-      
+
       &-img {
         width: 80px;
       }
@@ -2671,6 +2669,7 @@ button,
       font-size: 25px;
       margin-bottom: 30px;
     }
+
     &__list {
       grid-template-columns: 1fr;
       grid-template-rows: repeat(5, auto);

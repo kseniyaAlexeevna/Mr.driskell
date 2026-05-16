@@ -83,6 +83,7 @@ const filterCatalog = document.querySelectorAll(".filter__catalog")
 const filterCardTabs = document.querySelectorAll(".filter__card-tabs")
 const filterCardImgs = document.querySelectorAll(".filter__card-images")
 const filterCardBtn = document.querySelectorAll(".filter__card-button")
+const filterPagItem = document.querySelectorAll(".filter__pag-item")
 let currentPag = 0
 let currentTab = 0
 let filterCurrentItem = 0
@@ -193,16 +194,17 @@ function btnUpdate() {
   })
 }
 
+
 filterItem.forEach((el, index) => {
   el.addEventListener("click", (event) => {
     event.preventDefault();
-
     if (filterItem[filterCurrentItem].classList.contains('active')) {
       filterItem[filterCurrentItem].classList.remove('active')
       filterCatalog[filterCurrentItem].classList.remove('active')
     }
 
     filterCurrentItem = index;
+
 
     if (!filterItem[filterCurrentItem].classList.contains('active')) {
       filterItem[filterCurrentItem].classList.add('active')
@@ -212,8 +214,11 @@ filterItem.forEach((el, index) => {
 })
 
 let cardInd = 0
+let filterPag = 0
 let imgClindren = null
 let imgFilter = null
+let filterDotSum = null
+let cardSum = 2
 
 filterCardTabs.forEach((el, index) => {
   Array.from(el.children).forEach((tab, ind) => {
@@ -265,16 +270,92 @@ if (windowW <= 1920) {
     })
   })
 }
-if (windowW <= 1000) {
-  filterCatalog.forEach((el) => {
+if (windowW <= 1280) {
+  filterCatalog.forEach((el, cards) => {
+    if (el.classList.contains('active')) {
+      filterDotSum = Math.ceil(el.children.length / 3)
+      filterPagItem.forEach((el, index) => {
+        if (index > (filterDotSum - 1)) {
+          filterPagItem[index].style.display = "none"
+        }
+      })
+      // console.log(filterDotSum)
+    }
+    filterItem.forEach((item, index) => {
+      item.addEventListener("click", (event) => {
+        if (el.classList.contains('active')) {
+          filterDotSum = Math.ceil(el.children.length / 3)
+          filterPagItem.forEach((pag, index) => {
+            if (index > (filterDotSum - 1)) {
+              filterPagItem[index].style.display = "none"
+            } else {
+              filterPagItem[index].style.display = "block"
+            }
+          })
+        }
+      })
+    })
     Array.from(el.children).forEach((card, ind) => {
-      if (ind > 2) {
+      if (ind > cardSum) {
         el.children[ind].style.display = "none"
       }
     })
   })
   filterCardBtn.forEach((el) => {
     el.textContent = "В корзину"
+  })
+  filterItem.forEach((el, index) => {
+    el.addEventListener("click", (event) => {
+      if (filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.remove('active')
+      }
+      
+      filterPag = 0
+      cardSum = (filterPag * 3) + 2
+
+      filterCatalog.forEach((ctg, cards) => {
+        Array.from(ctg.children).forEach((card, index) => {
+          if (index < (filterPag * 3)) {
+            card.style.display = "none"
+          } else if (index > cardSum) {
+            card.style.display = "none"
+          } else {
+            card.style.display = "block"
+          }
+        })
+      })
+
+      if (!filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.add('active')
+      }
+    })
+  })
+
+  filterPagItem.forEach((el, ind) => {
+    el.addEventListener("click", () => {
+      if (filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.remove('active')
+      }
+
+      filterPag = ind
+      cardSum = (filterPag * 3) + 2
+
+      filterCatalog.forEach((ctg, cards) => {
+        Array.from(ctg.children).forEach((card, index) => {
+          if (index < (filterPag * 3)) {
+            card.style.display = "none"
+          } else if (index > cardSum) {
+            card.style.display = "none"
+          } else {
+            card.style.display = "block"
+          }
+        })
+      })
+
+      if (!filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.add('active')
+      }
+    })
   })
 }
 
