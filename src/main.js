@@ -309,7 +309,7 @@ if (windowW <= 1280) {
       if (filterPagItem[filterPag].classList.contains('active')) {
         filterPagItem[filterPag].classList.remove('active')
       }
-      
+
       filterPag = 0
       cardSum = (filterPag * 3) + 2
 
@@ -360,10 +360,65 @@ if (windowW <= 1280) {
 }
 
 if (windowW <= 760) {
+  cardSum = 0
   filterCatalog.forEach((el) => {
     Array.from(el.children).forEach((card, ind) => {
-      if (ind > 0) {
+      if (ind > cardSum) {
         el.children[ind].style.display = "none"
+      }
+    })
+  })
+
+  filterItem.forEach((el, index) => {
+    el.addEventListener("click", (event) => {
+      if (filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.remove('active')
+      }
+
+      filterPag = 0
+      cardSum = filterPag
+
+      filterCatalog.forEach((ctg, cards) => {
+        Array.from(ctg.children).forEach((card, index) => {
+          if (index < filterPag) {
+            card.style.display = "none"
+          } else if (index > cardSum) {
+            card.style.display = "none"
+          } else {
+            card.style.display = "block"
+          }
+        })
+      })
+
+      if (!filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.add('active')
+      }
+    })
+  })
+
+  filterPagItem.forEach((el, ind) => {
+    el.addEventListener("click", () => {
+      if (filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.remove('active')
+      }
+
+      filterPag = ind
+      cardSum = filterPag
+
+      filterCatalog.forEach((ctg, cards) => {
+        Array.from(ctg.children).forEach((card, index) => {
+          if (index < filterPag) {
+            card.style.display = "none"
+          } else if (index > cardSum) {
+            card.style.display = "none"
+          } else {
+            card.style.display = "block"
+          }
+        })
+      })
+
+      if (!filterPagItem[filterPag].classList.contains('active')) {
+        filterPagItem[filterPag].classList.add('active')
       }
     })
   })
