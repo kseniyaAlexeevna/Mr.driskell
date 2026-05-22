@@ -1,5 +1,52 @@
 import './style.scss';
 
+// Добавление плавной прокрутки независимо от настроек браузера
+
+const links = document.querySelectorAll('.header__bottom-nav-item>a, a.upArrow__button');
+
+links.forEach(link => {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    const anchor = this.getAttribute('href');
+    const targetElement = document.querySelector(anchor);
+
+    if (!targetElement) return; // Защита от несуществующих якорей
+
+    // 1. Получаем текущую позицию прокрутки
+    const currentScroll = window.pageYOffset;
+
+    // 2. Вычисляем абсолютную позицию цели (от верха документа)
+    // getBoundingClientRect().top даёт смещение относительно видимого окна
+    const targetOffsetTop = targetElement.getBoundingClientRect().top;
+    const targetAbsoluteTop = currentScroll + targetOffsetTop;
+
+    // 3. Добавляем отступ (-60px, как в вашем jQuery-коде)
+    const targetPosition = targetAbsoluteTop - 180;
+
+    // 4. Параметры анимации
+    let start = null;
+    const duration = 800;
+
+    function step(timestamp) {
+      if (!start) start = timestamp;
+      
+      // Линейная интерполяция: от currentScroll до targetPosition за duration мс
+      const progress = Math.min((timestamp - start) / duration, 1);
+      const newScroll = currentScroll + progress * (targetPosition - currentScroll);
+
+      window.scrollTo(0, newScroll);
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    }
+
+    requestAnimationFrame(step);
+  });
+});
+
+
 const windowW = document.documentElement.clientWidth;
 const catalogMenu = document.querySelector('.header__catalog-menu.bottom')
 const catalogMenuMobile = document.querySelector('.header__catalog-menu.mobile')
@@ -193,7 +240,6 @@ function btnUpdate() {
     }
   })
 }
-
 
 filterItem.forEach((el, index) => {
   el.addEventListener("click", (event) => {
@@ -545,17 +591,6 @@ const brandsList = document.querySelector(".brands__place-list")
 const brandsItem = document.querySelectorAll(".brands__place-item")
 let currentBrands = 0;
 const brands = Math.ceil(brandsItem.length / 2);
-
-if (windowW <= 1280) {
-  brandsList.style.transform = `translateX(${(-currentBrands * 768) + (windowW - (768)) / 2}px)`
-}
-
-if (windowW <= 700) {
-  brandsList.style.transform = `translateX(${(-currentBrands * 440) + (windowW - (440)) / 2}px)`
-}
-if (windowW <= 400) {
-  brandsList.style.transform = `translateX(${(-currentBrands * 320) + (windowW - (320)) / 2}px)`
-}
 
 brandsButtonLeft.addEventListener("click", () => {
   currentBrands = (currentBrands - 1 + brands) % brands;

@@ -14,9 +14,6 @@
   --color-card: #F5F5F5;
   --color-light: #EEEEEE;
 }
-html {
-  scroll-behavior: smooth;
-}
 
 body {
   background-color: var(--color-light);
@@ -1502,6 +1499,7 @@ button,
   &__container {
     display: grid;
     position: relative;
+    justify-content: center;
   }
 
   &__title {
