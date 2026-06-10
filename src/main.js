@@ -225,7 +225,7 @@ if (windowW <= 1280) {
 
 if (windowW <= 400) {
   heroBgImg.forEach((el) => {
-    el.src = "./src/assets/images/hero-bg-mob.jpg"
+    el.src = "/Mr.driskell/assets/hero-bg-mob.jpg"
   })
 }
 
