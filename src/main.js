@@ -168,7 +168,7 @@ if (windowW <= 1280) {
 
     currentPag -= 1;
     if (currentPag < 0) {
-      currentPag = heroPagItem.length - 1
+      currentPag = (heroPagItem.length / 2) - 1
     }
 
     if (!heroPagItem[currentPag].classList.contains('active')) {
@@ -184,7 +184,7 @@ if (windowW <= 1280) {
     }
 
     currentPag += 1;
-    if (currentPag == heroPagItem.length) {
+    if (currentPag == (heroPagItem.length / 2)) {
       currentPag = 0
     }
 
@@ -212,7 +212,7 @@ if (windowW <= 1280) {
       heroPagBtn.forEach((el) => {
         if (currentPag == 0) {
           heroPagBtn[1].classList.add('active')
-        } else if (currentPag == heroPagItem.length - 1) {
+        } else if (currentPag == (heroPagItem.length / 2) - 1) {
           heroPagBtn[0].classList.add('active')
         } else {
           el.classList.remove('active')
